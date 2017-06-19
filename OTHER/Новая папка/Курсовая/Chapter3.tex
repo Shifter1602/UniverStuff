@@ -1,0 +1,106 @@
+\subsection{Программное решение}
+Задача 16
+\begin{lstlisting}[language=R,basicstyle=\normalsize]
+N<-100000
+m<-0
+for(i in 1:N)
+{
+n<-0;
+for(j in 1:4)
+	{
+	x<-sample(1:5,1);
+	if(x==1)n<-n+1;
+	}
+if(n==4)m<-m+1;
+}
+m/N
+\end{lstlisting}
+Задача 46
+\begin{lstlisting}[language=R,basicstyle=\normalsize]
+N<-100000
+a<-0
+for(i in 1:N)
+{
+    n<-0
+    m<-0
+    x<-runif(2,0,100)
+    y<-runif(2,0,100)
+    for(j in 1:2)
+    {
+        if(x[j]<70)n<-n+1;
+        if(y[j]<80)m<-m+1;
+    }
+    if(n==2 && m==0)a<-a+1;
+    if(n==1 && m==1)a<-a+1;
+    if(n==0 && m==2)a<-a+1;
+}
+a/N
+\end{lstlisting}
+\newpage
+Задача 59
+\begin{lstlisting}[language=R,basicstyle=\normalsize]
+N<-1000000
+a<-0
+for(i in 1:N)
+{
+x<-sample(1:15,1)
+y<-sample(1:20,1)
+z<-sample(1:2,1)
+if(x<8 && y>9 && z==1)a<-a+1;
+if(x>7 && y<10 && z==1)a<-a+1;
+if(x>7 && y>9)a<-a+1;
+}
+a/N
+\end{lstlisting}
+Задача 75
+\begin{lstlisting}[language=R,basicstyle=\normalsize]
+N<-1000000
+a<-0
+for(i in 1:N)
+{
+x<-sample(1:100,1);
+s1<-runif(1,0,1);
+s2<-runif(1,0,1);
+s3<-runif(1,0,1);
+s4<-runif(1,0,1);
+if(x<23 && s1<=0.69)a<-a+1;
+if(x>22 && x<56 && s2<=0.74)a<-a+1;
+if(x>55 && x<88 && s3<=0.43)a<-a+1;
+if(x>87 && s4<=0.38)a<-a+1;
+}
+a/N
+\end{lstlisting}
+\newpage
+Задача 78
+\begin{lstlisting}[language=R,basicstyle=\normalsize]
+N<-1000000
+a<-0
+for(i in 1:N)
+{
+x<-sample(1:48,1)
+s1<-runif(1,0,1);
+s2<-runif(1,0,1);
+s3<-runif(1,0,1);
+if(x<13 && s1<=0.71)a<-a+1;
+if(x>12 && x<30 && s2<=0.89)a<-a+1;
+if(x>29 && s3<=0.73)a<-a+1;
+}
+a/N
+\end{lstlisting}
+Задача 88
+\begin{lstlisting}[language=R,basicstyle=\normalsize]
+N<-1000000
+a<-0
+b<-0
+for(i in 1:N)
+{
+x<-sample(1:10,1)
+s1<-runif(1,0,1);
+s2<-runif(1,0,1);
+s3<-runif(1,0,1);
+if(x<6 && s1<=0.3)a<-a+1;
+if(x>5 && x<10 && s2<=0.6)a<-a+1;
+if(x>9 && s3<=0.8){a<-a+1;b<-b+1;}
+}
+b/a
+\end{lstlisting}

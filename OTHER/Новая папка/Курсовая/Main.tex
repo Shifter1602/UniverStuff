@@ -1,0 +1,92 @@
+\documentclass[a4paper,12pt]{report}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8x]{inputenc}
+\usepackage[english,russian]{babel}%используем русский и английский языки с переносами
+\usepackage{mathptmx}
+%\usepackage{times} 
+\usepackage{amssymb,amsfonts,amsmath,amsthm,mathtext,cite,enumerate,float} %подключаем нужные пакеты расширений
+
+\ifx\pdfoutput\undefined
+\usepackage{graphicx}
+\else
+\usepackage[pdftex]{graphicx}
+\fi
+\graphicspath{{images/}}%путь к рисункам
+
+%\usepackage{indentfirst} % отделять первую строку раздела абзацным отступом тоже
+\usepackage[usenames,dvipsnames]{color} % названия цветов
+\usepackage{makecell}
+\usepackage{multirow} % улучшенное форматирование таблиц
+\usepackage{ulem} % подчеркивания
+ 
+\linespread{1.3} % полуторный интервал
+%\renewcommand{\rmdefault}{ftm} % Times New Roman
+\frenchspacing
+
+\makeatletter
+\renewcommand{\@biblabel}[1]{#1.} % Заменяем библиографию с квадратных скобок на точку:
+\makeatother
+
+\usepackage{geometry} % Меняем поля страницы
+\geometry{left=3cm}% левое поле
+\geometry{right=1cm}% правое поле
+\geometry{top=1cm}% верхнее поле
+\geometry{bottom=1.7cm}% нижнее поле
+
+
+\usepackage{titlesec}
+\titleformat{\chapter}[block]
+{\normalfont\bfseries}{\thechapter}{1em}{\Large}
+\titleformat{\section}[block]
+{\normalfont\bfseries}{\thesection}{.5em}{\Large}
+
+\renewcommand{\theenumi}{\arabic{enumi}}% Меняем везде перечисления на цифра.цифра
+\renewcommand{\labelenumi}{\arabic{enumi}}% Меняем везде перечисления на цифра.цифра
+\renewcommand{\theenumii}{.\arabic{enumii}}% Меняем везде перечисления на цифра.цифра
+\renewcommand{\labelenumii}{\arabic{enumi}.\arabic{enumii}.}% Меняем везде перечисления на цифра.цифра
+\renewcommand{\theenumiii}{.\arabic{enumiii}}% Меняем везде перечисления на цифра.цифра
+\renewcommand{\labelenumiii}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}.}% Меняем везде перечисления на цифра.цифра
+
+\setcounter{tocdepth}{2}
+
+\usepackage{color}
+\definecolor{white}{rgb}{1,1,1}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+
+\usepackage{listings}
+\lstset{
+language=R,
+basicstyle=\scriptsize\ttfamily,
+commentstyle=\ttfamily\color{gray},
+numbers=left,
+numberstyle=\ttfamily\color{gray}\footnotesize,
+stepnumber=1,
+numbersep=10pt,
+backgroundcolor=\color{white},
+showspaces=false,
+showstringspaces=false,
+showtabs=false,
+frame=single,
+tabsize=2,
+captionpos=b,
+breaklines=true,
+breakatwhitespace=false,
+title=\lstname,
+escapeinside={},
+keywordstyle={},
+morekeywords={}
+}
+
+\overfullrule=2cm
+
+\begin{document}
+\input{Title}
+\tableofcontents
+\input{Introduction}
+\input{Chapter1}
+\input{Chapter2}
+\input{Chapter3}
+\input{Chapter2.1}
+\input{Appendix}
+\input{Literature}
+\end{document}

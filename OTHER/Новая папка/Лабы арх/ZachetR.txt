@@ -1,0 +1,175 @@
+//Zadanie 1
+
+X<-runif(30,1,10)
+Y<-runif(30,1,10)
+Z<-X-2*Y+rnorm(30,0,1)
+
+s<-0
+k<-0
+l<-0
+
+N<-length(X)
+for (i in 1: N)
+{
+s<-s+X[i]              #Мат ожидание X
+}
+MX<-s/N
+mean(X)
+MX
+
+
+NY<-length(Y)
+for (i in 1: N)
+{
+k<-k+Y[i]              #Мат ожидание Y
+}
+MY<-k/NY
+mean(Y)
+MY
+
+NZ<-length(Z)
+for (i in 1: N)
+{
+l<-l+Z[i]              #Мат ожидание Z
+}
+MZ<-l/NZ
+mean(Z)
+MZ
+
+s<-0
+N<-length(X)
+for (i in 1: N)
+{
+s<-s+(X[i]-MX)^2       #Отклонение X
+}
+sdX<-sqrt(s/N)
+sdX
+sd(X)
+
+
+k<-0
+N<-length(Y)
+for (i in 1: N)        #Отклонение Y
+{
+k<-k+(Y[i]-MY)^2
+}
+sdY<-sqrt(k/N)
+sd(Y)
+sdY
+
+m<-0
+N<-length(Z)
+for (i in 1: N)
+{
+m<-m+(Z[i]-MZ)^2      #Отклонение Z
+}
+sdZ<-sqrt(m/N)
+sd(Z)
+sdZ
+//Zadanie 2
+hist(X,probability=TRUE)
+curve( 1/(sqrt(2*pi)*sdX)*exp(-((x-MX)^2)/(2*sdX^2)) ,min(X),max(X),add=TRUE)
+
+hist(Y,probability=TRUE)
+curve( 1/(sqrt(2*pi)*sdY)*exp(-((x-MY)^2)/(2*sdY^2)) ,min(Y),max(Y),add=TRUE)
+
+hist(Z,probability=TRUE)
+curve( 1/(sqrt(2*pi)*sdZ)*exp(-((x-MZ)^2)/(2*sdZ^2)) ,min(Z),max(Z),add=TRUE)
+
+//Zadanie 3
+qqnorm(X)
+qqline(X)
+shapiro.test(X)
+
+qqnorm(Y)
+qqline(Y)
+shapiro.test(Y)
+
+qqnorm(Z)
+qqline(Z)
+shapiro.test(Z)
+//Zadanie 4
+
+s<-0
+N<-length(X)
+for (i in 1: N)               #Расчет величины X*Z
+{
+s<-s+X[i]*Z[i]
+}
+
+Rxz<-(s/N-MX*MZ)/(sdX*sdZ)    #Коэффициент корреляции для X, Z
+Rxz
+cor(X,Z)
+
+
+k<-0
+N<-length(Y)
+for (i in 1: N)               #Расчет Y*Z
+{
+k<-k+Y[i]*Z[i]
+}
+
+Ryz<-(k/N-MY*MZ)/(sdY*sdZ)    #Коэффициент корреляции для Y, Z
+Ryz 
+cor(Y,Z)
+
+
+m<-0
+N<-length(Z)
+for (i in 1: N)               #Расчет X*Y
+{
+m<-m+X[i]*Y[i]
+}
+
+Rxy<-(m/N-MX*MY)/(sdX*sdY)    #Коэффициент корреляции для X, Y
+Rxy 
+cor(X,Y)
+//Zadanie 5
+n<-length(X)
+TRyz<-Ryz*sqrt(n-2)/sqrt(1-Ryz^2) #Наблюдаемая статистика
+TRxz<-Rxz*sqrt(n-2)/sqrt(1-Ryz^2)
+TRxy<-Rxy*sqrt(n-2)/sqrt(1-Ryz^2)
+alpha<-0.05
+tkr<-qt(1-alpha/2, n-2)        #Критическая статистика
+TRyz
+cor.test(Y,Z) 
+TRxz
+cor.test(X,Z) 
+TRxy
+cor.test(X,Y) 
+tkr
+//Zadanie 6,9
+x2<-0
+N<-length(X)
+for (i in 1: N)               #Расчет X*X
+{
+x2<-x2+X[i]*X[i]
+}
+B<-(x2/N*MY-MX*m/n)/sdX^2
+B
+//
+data1<-data.frame(X,Z)
+plot(data1)
+
+lm(Z~X,data1)
+curve(-10+1*x, min(X), max(X), add=TRUE)
+
+data2<-data.frame(Y,Z)
+plot(data2)
+
+lm(Z~Y,data2)
+curve(-13.638+4.866*x, min(Y), max(Y), add=TRUE)
+
+data3<-data.frame(X,Y,Z)
+lm(Z~Y+X,data3)
+
+#curve(-13.638+4.866*x, min(Y), max(Y), add=TRUE)
+plot(-0.5+6.2*x,-4*y)
+
+//Zadanie 8
+Rzyx<-sqrt((Rxz^2+Ryz^2-2*Rxy*Rxz*Ryz)/(1-Rxy^2))
+Rzyx
+Rzxny<-(Rxz-Rxy*Ryz)/sqrt(((1-Rxy^2)*(1-Ryz^2))
+Rzxny
+Rzynx<-(Ryz-Rxy*Rxz)/sqrt(((1-Rxy^2)*(1-Rxz^2))
+Rzynx
