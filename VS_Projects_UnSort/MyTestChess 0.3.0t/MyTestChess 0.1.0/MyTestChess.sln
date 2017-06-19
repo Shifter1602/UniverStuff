@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyTestChess", "MyTestChess\MyTestChess.csproj", "{6C48BDA4-1B6C-4F45-8943-FAB4956BF959}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6C48BDA4-1B6C-4F45-8943-FAB4956BF959}.Debug|x86.ActiveCfg = Debug|x86
+		{6C48BDA4-1B6C-4F45-8943-FAB4956BF959}.Debug|x86.Build.0 = Debug|x86
+		{6C48BDA4-1B6C-4F45-8943-FAB4956BF959}.Release|x86.ActiveCfg = Release|x86
+		{6C48BDA4-1B6C-4F45-8943-FAB4956BF959}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
