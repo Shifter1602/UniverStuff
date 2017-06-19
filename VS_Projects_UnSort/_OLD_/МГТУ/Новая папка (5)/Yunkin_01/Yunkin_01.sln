@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Yunkin_01", "Yunkin_01.vcproj", "{3C5D652C-0675-4E16-9C7C-BD8610FBB8DF}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{3C5D652C-0675-4E16-9C7C-BD8610FBB8DF}.Debug.ActiveCfg = Debug|Win32
+		{3C5D652C-0675-4E16-9C7C-BD8610FBB8DF}.Debug.Build.0 = Debug|Win32
+		{3C5D652C-0675-4E16-9C7C-BD8610FBB8DF}.Release.ActiveCfg = Release|Win32
+		{3C5D652C-0675-4E16-9C7C-BD8610FBB8DF}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

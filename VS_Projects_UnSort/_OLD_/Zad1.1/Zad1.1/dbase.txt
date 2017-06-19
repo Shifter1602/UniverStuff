@@ -1,0 +1,10 @@
+Sainov                        1970 103400   
+Ivanov                        1530 104000   
+Ipanov                        1938 500000   
+Kranov                        1930 108800   
+Tronov                        1950 100000   
+Rostkov                       1960 100650   
+Hodor                         1488 100000   
+Ikupov                        1337 900000   
+Brapon                        1954 300000   
+Budilov                       2005 400000   

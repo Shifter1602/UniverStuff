@@ -1,0 +1,46 @@
+class chess
+{
+    private int id; //идентификатор
+    private string name; //имя фигуры/пешки
+    private string party; //сторона
+    private bool act = false; //Активна ли(если на нее нажал пол-ль и она должна ходить, то true
+    private int[,] posicition = new int[8, 8]; //позиция на доске
+
+    // Default constructor:
+    public chess()
+    {
+        id = 1; name = "BP1"; party = "white";
+        id = 2; name = "BP2"; party = "white";
+        id = 3; name = "BP3"; party = "white";
+        id = 4; name = "BP4"; party = "white";
+        id = 5; name = "BP5"; party = "white";
+        id = 6; name = "BP6"; party = "white";
+        id = 7; name = "BP7"; party = "white";
+        id = 8; name = "BP8"; party = "white";
+        id = 9; name = "Ladia1"; party = "white";
+        id = 10; name = "Ladia2"; party = "white";
+        id = 11; name = "Koni1"; party = "white";
+        id = 12; name = "Slon1"; party = "white";
+        //.......
+
+    }
+    ~chess() { }
+}
+
+
+struct chess
+{
+    public int id; //идентификатор
+    public string name; //имя фигуры/пешки
+    public string party="white"; //сторона
+    public bool act = false; //Активна ли(если на нее нажал пол-ль и она должна ходить, то true
+    public int[,] posicition = new int[8, 8]; //позиция на доске
+}
+
+
+
+
+
+
+            BP1.Location = new Point(kletki[bp2.posicition[0], bp2.posicition[1]].locationX, kletki[bp2.posicition[0], bp2.posicition[1]].locationY);
+
